@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  node:
+      image: 'node:lts'
+      volumes:
+          - './:/srv/app:rw'
+          - '~/.cache/yarn:/home/node/.yarn-cache'
+      working_dir: '/srv/app'
+      networks:
+          - 'app'
+
+networks:
+    app:
