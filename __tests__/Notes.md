@@ -1,1 +1,0 @@
-// C'est peut-etre un hasard que ExpenseResume soit le retour de calcul de la debt
