@@ -1,8 +1,8 @@
-import { addGroupExpense } from "../src/domain/group"
+import { addGroupExpense, Group } from "../src/domain/group"
 
 describe('We can simulate a debt group', () => {
     test('It is possible to a expenses to a group', () => {
-        const group = {
+        const group: Group = {
             people: ['fred', 'gabe', 'alice', 'bob', 'charlie', 'david', 'ema'],
             expenses: []
         }
