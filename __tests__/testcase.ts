@@ -13,7 +13,9 @@ async function setup(): Promise<Knex> {
 }
 
 function teardown(): void {
-    knex.destroy();
+    if (knex !== undefined) {
+        knex.destroy();
+    }
 }
 
 export { setup, teardown }
