@@ -9,6 +9,12 @@ list:
 	@echo "*********************"
 	@grep -E '^[a-zA-Z-]+:.*?## .*$$' Makefile | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "[32m%-15s[0m %s\n", $$1, $$2}'
 
+
+.PHONY: up
+up: ## Up the project
+	@$(DOCKER_COMPOSE) up -d
+
+
 .PHONY: yarn
 yarn: ## Launch yarn with C argument
 	@$(YARN) ${C}
@@ -18,5 +24,5 @@ install: ## Install the project
 	@$(YARN) install
 
 .PHONY: test
-test: ## Run jest test
+test: up ## Run jest test
 	@$(YARN) jest
