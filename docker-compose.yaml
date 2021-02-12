@@ -7,8 +7,22 @@ services:
           - './:/srv/app:rw'
           - '~/.cache/yarn:/home/node/.yarn-cache'
       working_dir: '/srv/app'
+      environment:
+          - PG_CONNECTION_STRING=postgresql://tricount:tricount@127.0.0.1:5432/tricount?serverVersion=13.1&charset=utf8
       networks:
           - 'app'
+
+  db:
+      image: 'postgres:13.1'
+      environment:
+          - POSTGRES_DB=tricount
+          - POSTGRES_PASSWORD=tricount
+          - POSTGRES_USER=tricount
+      ports:
+          - '15432:5432'
+      networks:
+          - 'app'
+        
 
 networks:
     app:

@@ -1,4 +1,4 @@
-import { filterUsingKey } from "../src/tools/ramda_extensions";
+import { filterUsingKey } from "../../src/tools/ramda_extensions";
 
 test('it filters with key', () => {
     const test = {
