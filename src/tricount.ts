@@ -1,5 +1,5 @@
-import { connectDb } from "./tools/knex"
+import { connectDb } from "./tools/knex";
 
 export const init = async () => {
-    await connectDb();
-}
+  await connectDb();
+};

@@ -2,15 +2,15 @@ import { db } from "../../src/tools/knex";
 import { setup, teardown } from "../testcase";
 
 beforeAll(async () => {
-    await setup();
-})
+  await setup();
+});
 
 afterAll(async () => {
-    teardown()
-})
+  teardown();
+});
 
-test('It can talk to the databse', async () => {
-    const result = await db.postgresClient.raw('SELECT NOW()')
+test("It can talk to the databse", async () => {
+  const result = await db.postgresClient.raw("SELECT NOW()");
 
-    expect(result).toBeDefined();
+  expect(result).toBeDefined();
 });

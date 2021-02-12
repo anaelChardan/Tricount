@@ -1,18 +1,18 @@
-import Knex from 'knex';
-import { dbConnection } from './postgres/provider';
+import Knex from "knex";
+import { dbConnection } from "./postgres/provider";
 
 type DbClient = {
-    postgresClient: Knex;
-}
+  postgresClient: Knex;
+};
 
-var db: DbClient
+let db: DbClient;
 
 const connectDb = async (): Promise<DbClient> => {
-    db = {
-        postgresClient: await dbConnection()
-    }
+  db = {
+    postgresClient: await dbConnection(),
+  };
 
-    return db;
-}
+  return db;
+};
 
 export { db, connectDb };
